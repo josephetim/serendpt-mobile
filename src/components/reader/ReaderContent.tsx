@@ -2,6 +2,7 @@ import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 import { moderateScale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
 
 interface ReaderContentProps {
   pageNumber: number;
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
   pageNumber: {
     textAlign: "center",
     color: "rgba(0,0,0,0.70)",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(12),
     lineHeight: moderateScale(18),
     marginBottom: verticalScale(2),
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
   pageTitle: {
     textAlign: "center",
     color: "#000000",
-    fontFamily: "EBGaramond_500Medium",
+    fontFamily: Fonts.serifMedium,
     fontSize: moderateScale(37),
     lineHeight: moderateScale(44),
     marginBottom: verticalScale(20),
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
   },
   bodyText: {
     color: "#000000",
-    fontFamily: "Georgia",
+    fontFamily: Fonts.serifRegular,
     fontSize: moderateScale(16),
     lineHeight: moderateScale(31),
     textAlign: "left",

@@ -8,6 +8,7 @@ import { FeatureBullet } from "../src/components/onboarding/FeatureBullet";
 import { GoogleAuthButton } from "../src/components/onboarding/GoogleAuthButton";
 import { useAuth } from "../src/hooks/useAuth";
 import { moderateScale, scale, verticalScale } from "../src/utils/responsive";
+import { Fonts } from "../src/theme/fonts";
 
 export default function OnboardingScreen() {
   const { isAuthenticated } = useAuth();
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     maxWidth: scale(263),
     textAlign: "center",
-    fontFamily: "EBGaramond_400Regular",
+    fontFamily: Fonts.serifRegular,
     color: "#000000",
     fontSize: moderateScale(50),
     lineHeight: moderateScale(60),

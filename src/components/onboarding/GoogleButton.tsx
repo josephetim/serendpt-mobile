@@ -1,8 +1,9 @@
 import React from "react";
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
 
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
+import { AppIcon } from "../ui/AppIcon";
 
 interface GoogleButtonProps {
   onPress: () => void;
@@ -20,7 +21,7 @@ export const GoogleButton = ({ onPress, loading = false }: GoogleButtonProps) =>
         <ActivityIndicator color="#FFFFFF" />
       ) : (
         <View style={styles.content}>
-          <AntDesign name="google" size={scale(20)} color="#FFFFFF" />
+          <AppIcon name="google" size={scale(18)} color="#FFFFFF" />
           <Text style={styles.text}>Login/Sign up with google</Text>
         </View>
       )}
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#FFFFFF",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(16),
   },
 });

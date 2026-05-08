@@ -11,6 +11,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
 import { AuthBackground } from "./AuthBackground";
+import { Fonts } from "../../theme/fonts";
 
 interface AuthShellProps {
   eyebrow: string;
@@ -71,14 +72,14 @@ const styles = StyleSheet.create({
     gap: verticalScale(2),
   },
   eyebrow: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(13),
     lineHeight: moderateScale(22),
     color: "#000000",
     letterSpacing: 0.2,
   },
   title: {
-    fontFamily: "EBGaramond_500Medium",
+    fontFamily: Fonts.serifMedium,
     fontSize: moderateScale(35),
     lineHeight: moderateScale(44),
     color: "#000000",

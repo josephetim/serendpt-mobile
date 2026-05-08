@@ -1,8 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
+import { AppIcon } from "../ui/AppIcon";
 
 interface FeatureBulletProps {
   text: string;
@@ -12,7 +13,7 @@ export const FeatureBullet = ({ text }: FeatureBulletProps) => {
   return (
     <View style={styles.row}>
       <View style={styles.iconCircle}>
-        <Feather name="check" size={scale(12)} color="#FFFFFF" />
+        <AppIcon name="check" size={scale(12)} color="#FFFFFF" />
       </View>
       <Text style={styles.text}>{text}</Text>
     </View>
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "rgba(0,0,0,0.72)",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(16),
     lineHeight: moderateScale(24),
   },

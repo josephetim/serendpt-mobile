@@ -2,6 +2,7 @@ import React from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 
 import { moderateScale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
 
 interface LoadingStateProps {
   message?: string;
@@ -26,6 +27,6 @@ const styles = StyleSheet.create({
   message: {
     fontSize: moderateScale(14),
     color: "#424242",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
   },
 });

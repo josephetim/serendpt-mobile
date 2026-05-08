@@ -10,6 +10,7 @@ import { Screen } from "../../src/components/ui/Screen";
 import { useAuth } from "../../src/hooks/useAuth";
 import { normalizeError } from "../../src/utils/errors";
 import { moderateScale, scale, verticalScale } from "../../src/utils/responsive";
+import { Fonts } from "../../src/theme/fonts";
 
 type OtpFlow = "signup" | "login";
 
@@ -147,20 +148,20 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(26),
   },
   eyebrow: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(13),
     color: "#424242",
     marginBottom: verticalScale(3),
   },
   title: {
-    fontFamily: "EBGaramond_500Medium",
+    fontFamily: Fonts.serifMedium,
     fontSize: moderateScale(42),
     lineHeight: moderateScale(48),
     color: "#000000",
     marginBottom: verticalScale(8),
   },
   subtitle: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(14),
     color: "#70706F",
   },
@@ -170,7 +171,7 @@ const styles = StyleSheet.create({
   notice: {
     marginBottom: verticalScale(14),
     color: "#212121",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(13),
     textAlign: "center",
   },
@@ -180,7 +181,7 @@ const styles = StyleSheet.create({
   },
   resendText: {
     color: "#212121",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(14),
     textDecorationLine: "underline",
   },

@@ -10,6 +10,7 @@ import { ErrorState } from "../../src/components/ui/ErrorState";
 import { useAuth } from "../../src/hooks/useAuth";
 import { normalizeError } from "../../src/utils/errors";
 import { scale, verticalScale } from "../../src/utils/responsive";
+import { Fonts } from "../../src/theme/fonts";
 
 export default function LoginScreen() {
   const loginBg = require("../../assets/images/auth-bg.png");
@@ -130,12 +131,12 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(8),
   },
   footerText: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: scale(12.8),
     color: "#424242",
   },
   footerLink: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: scale(12.8),
     color: "#212121",
     textDecorationLine: "underline",

@@ -7,7 +7,6 @@ import {
   Text,
   View,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
 import { router, useLocalSearchParams } from "expo-router";
 
 import { AIControlGroup } from "../../src/components/reader/AIControlGroup";
@@ -20,11 +19,13 @@ import { VoicePicker } from "../../src/components/reader/VoicePicker";
 import { ErrorState } from "../../src/components/ui/ErrorState";
 import { LoadingState } from "../../src/components/ui/LoadingState";
 import { Screen } from "../../src/components/ui/Screen";
+import { AppIcon } from "../../src/components/ui/AppIcon";
 import { usePageAudio } from "../../src/hooks/usePageAudio";
 import { useReader } from "../../src/hooks/useReader";
 import { useVoices } from "../../src/hooks/useVoices";
 import { getBatchText } from "../../src/utils/batchContent";
 import { scale, verticalScale } from "../../src/utils/responsive";
+import { Fonts } from "../../src/theme/fonts";
 
 type ReaderParams = {
   documentId?: string | string[];
@@ -146,7 +147,7 @@ export default function ReaderScreen() {
           style={styles.exitFullscreenButton}
           onPress={() => setIsFullscreen(false)}
         >
-          <Feather name="minimize-2" size={scale(18)} color="#000000" />
+          <AppIcon name="exitFullscreen" size={scale(19)} color="#000000" />
         </Pressable>
       )}
 
@@ -271,7 +272,7 @@ const styles = StyleSheet.create({
     paddingTop: verticalScale(14),
   },
   pageModalTitle: {
-    fontFamily: "EBGaramond_500Medium",
+    fontFamily: Fonts.serifMedium,
     fontSize: scale(25),
     color: "#000000",
     marginBottom: verticalScale(10),
@@ -292,12 +293,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFBEB",
   },
   pageItemText: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     color: "#000000",
     fontSize: scale(14),
   },
   pageItemSubtitle: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     color: "#70706F",
     fontSize: scale(12),
     marginTop: verticalScale(2),

@@ -39,6 +39,9 @@
       "expo-web-browser",
       "expo-audio"
     ],
+    "assetBundlePatterns": [
+      "assets/**/*"
+    ],
     "extra": {
       "router": {},
       "eas": {

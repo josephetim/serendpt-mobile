@@ -8,10 +8,11 @@ import {
   Text,
   View,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { Voice } from "../../types/api";
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
+import { AppIcon } from "../ui/AppIcon";
 
 interface VoicePickerProps {
   visible: boolean;
@@ -35,7 +36,7 @@ export const VoicePicker = ({
           <View style={styles.header}>
             <Text style={styles.title}>Select a voice</Text>
             <Pressable onPress={onClose}>
-              <Feather name="x" size={scale(18)} color="#000000" />
+              <AppIcon name="close" size={scale(19)} color="#000000" />
             </Pressable>
           </View>
           <ScrollView contentContainerStyle={styles.list}>
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(12),
   },
   title: {
-    fontFamily: "EBGaramond_500Medium",
+    fontFamily: Fonts.serifMedium,
     fontSize: moderateScale(24),
     color: "#000000",
   },
@@ -133,18 +134,18 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   name: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(15),
     color: "#212121",
   },
   tag: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(12),
     color: "#70706F",
     marginTop: verticalScale(2),
   },
   disabledText: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(12),
     color: "#FF3B30",
   },

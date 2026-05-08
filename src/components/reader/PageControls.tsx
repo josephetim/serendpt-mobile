@@ -1,8 +1,9 @@
 import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
+import { AppIcon } from "../ui/AppIcon";
 
 interface PageControlsProps {
   currentPage: number;
@@ -28,7 +29,7 @@ export const PageControls = ({
         onPress={onPrevious}
         style={[styles.button, !canGoPrevious && styles.buttonDisabled]}
       >
-        <Feather name="chevron-left" size={scale(16)} color="#000000" />
+        <AppIcon name="chevronLeft" size={scale(16)} color="#000000" />
       </Pressable>
       <Text style={styles.text}>
         {currentPage} / {totalPages}
@@ -38,7 +39,7 @@ export const PageControls = ({
         onPress={onNext}
         style={[styles.button, !canGoNext && styles.buttonDisabled]}
       >
-        <Feather name="chevron-right" size={scale(16)} color="#000000" />
+        <AppIcon name="chevronRight" size={scale(16)} color="#000000" />
       </Pressable>
     </View>
   );
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     opacity: 0.4,
   },
   text: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(13),
     color: "#212121",
   },

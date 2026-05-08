@@ -1,8 +1,8 @@
 import React from "react";
 import { ActivityIndicator, Pressable, StyleSheet } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { moderateScale, scale } from "../../utils/responsive";
+import { AppIcon } from "../ui/AppIcon";
 
 interface FloatingAudioButtonProps {
   status: "idle" | "loading" | "playing" | "paused" | "buffering" | "error";
@@ -23,7 +23,7 @@ export const FloatingAudioButton = ({ status, onPress }: FloatingAudioButtonProp
       {isLoading ? (
         <ActivityIndicator color="#000000" />
       ) : (
-        <Feather name={iconName} size={scale(24)} color="#000000" />
+        <AppIcon name={iconName === "pause" ? "pause" : "play"} size={scale(24)} color="#000000" />
       )}
     </Pressable>
   );

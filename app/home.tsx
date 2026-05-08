@@ -177,7 +177,7 @@ export default function HomeScreen() {
 
         <View style={styles.categories}>
           <CategoryPill label="Website" icon="globe" />
-          <CategoryPill label="Fanfiction" icon="book-open" />
+          <CategoryPill label="Fanfiction" icon="bookOpen" />
         </View>
 
         <View style={styles.listWrap}>

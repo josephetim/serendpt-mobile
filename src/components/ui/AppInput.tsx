@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, TextInput, TextInputProps, View } from "react-native";
 
 import { moderateScale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
 
 interface AppInputProps extends TextInputProps {
   label?: string;
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
   label: {
     color: "#424242",
     fontSize: moderateScale(13),
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
   },
   input: {
     width: "100%",
@@ -41,12 +42,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: moderateScale(16),
     fontSize: moderateScale(16),
     color: "#212121",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.inputRegular,
     backgroundColor: "#FAFAFA",
   },
   error: {
     color: "#FF3B30",
     fontSize: moderateScale(12),
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
   },
 });

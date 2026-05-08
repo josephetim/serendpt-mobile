@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
 
 interface OTPInputProps {
   value: string;
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
   },
   slotText: {
     fontSize: moderateScale(20),
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.inputRegular,
     color: "#212121",
     textAlign: "center",
   },

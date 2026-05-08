@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import { moderateScale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
 
 interface EmptyStateProps {
   title: string;
@@ -26,13 +27,13 @@ const styles = StyleSheet.create({
     gap: verticalScale(8),
   },
   title: {
-    fontFamily: "EBGaramond_500Medium",
+    fontFamily: Fonts.serifMedium,
     fontSize: moderateScale(24),
     color: "#212121",
     textAlign: "center",
   },
   description: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(14),
     color: "#70706F",
     lineHeight: moderateScale(21),

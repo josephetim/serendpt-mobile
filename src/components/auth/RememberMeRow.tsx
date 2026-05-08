@@ -1,8 +1,9 @@
 import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
+import { AppIcon } from "../ui/AppIcon";
 
 interface RememberMeRowProps {
   checked: boolean;
@@ -19,7 +20,7 @@ export const RememberMeRow = ({
     <View style={styles.row}>
       <Pressable style={styles.left} onPress={onToggle}>
         <View style={[styles.checkbox, checked && styles.checkboxChecked]}>
-          {checked ? <Feather name="check" size={scale(12)} color="#000000" /> : null}
+          {checked ? <AppIcon name="check" size={scale(12)} color="#000000" /> : null}
         </View>
         <Text style={styles.text}>Remember me</Text>
       </Pressable>
@@ -57,12 +58,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFCC00",
   },
   text: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(13),
     color: "#000000",
   },
   forgot: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(13),
     color: "#424242",
   },

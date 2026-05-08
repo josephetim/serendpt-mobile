@@ -2,6 +2,7 @@ import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import { moderateScale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
 
 interface ErrorStateProps {
   message: string;
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(14),
     textAlign: "center",
     color: "#FF3B30",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     lineHeight: moderateScale(21),
   },
   button: {
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#FFFFFF",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(13),
   },
 });

@@ -1,10 +1,9 @@
 import React from "react";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
+import { AppIcon } from "../ui/AppIcon";
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
-
-const editIcon = require("../../../assets/icons/edit-icon.png");
+import { Fonts } from "../../theme/fonts";
 
 interface HomeHeaderProps {
   userName?: string | null;
@@ -27,10 +26,10 @@ export const HomeHeader = ({
         </View>
         <View style={styles.rightIcons}>
           <Pressable style={styles.searchButton}>
-            <Feather name="search" size={scale(23)} color="#000000" />
+            <AppIcon name="search" size={scale(23)} color="#000000" />
           </Pressable>
           <Pressable style={styles.editButton} onPress={onEditProfilePress}>
-            <Image source={editIcon} style={styles.editIcon} resizeMode="contain" />
+            <AppIcon name="editProfile" size={scale(20)} color="#000000" />
           </Pressable>
         </View>
       </View>
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   initial: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(17),
     color: "#000000",
   },
@@ -74,13 +73,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: scale(2),
   },
-  editIcon: {
-    width: scale(20),
-    height: scale(20),
-    tintColor: "#000000",
-  },
   title: {
-    fontFamily: "EBGaramond_500Medium",
+    fontFamily: Fonts.serifMedium,
     fontSize: moderateScale(36),
     lineHeight: moderateScale(44),
     color: "#000000",

@@ -73,3 +73,12 @@ Audio:
 - `POST /audio/stream`
 - `POST /audio/text`
 
+## Production Asset Notes
+
+- Fonts are loaded before app render in `app/_layout.tsx` with `expo-font` + `expo-splash-screen`.
+- Bundled Google Fonts used by the app:
+  - `@expo-google-fonts/eb-garamond`
+  - `@expo-google-fonts/inter`
+  - `@expo-google-fonts/zen-kaku-gothic-antique`
+- App icons are centralized in `src/components/ui/AppIcon.tsx` using `@expo/vector-icons` families to avoid APK icon dropouts.
+

@@ -1,14 +1,12 @@
 import React from "react";
-import { Image, Pressable, StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Voice } from "../../types/api";
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
 import { AssistantState } from "./ListeningPill";
 import { VoiceMiniCard } from "./VoiceMiniCard";
-
-const aiAssistantIcon = require("../../../assets/icons/ai-assistant-icon.png");
-const chatHistoryIcon = require("../../../assets/icons/chat-history-icon.png");
+import { AppIcon } from "../ui/AppIcon";
 
 interface AIControlGroupProps {
   assistantState: AssistantState;
@@ -37,11 +35,11 @@ export const AIControlGroup = ({
         },
       ]}
     >
-      {/* <Pressable style={styles.mainButton} onPress={onOpenAssistant}>
-        <Image source={aiAssistantIcon} style={styles.mainIcon} resizeMode="contain" />
-      </Pressable> */}
+      <Pressable style={styles.mainButton} onPress={onOpenAssistant}>
+        <AppIcon name="aiAssistant" size={scale(28)} color="#000000" />
+      </Pressable>
       <Pressable style={styles.historyButton} onPress={onOpenHistory}>
-        <Image source={chatHistoryIcon} style={styles.historyIcon} resizeMode="contain" />
+        <AppIcon name="chatHistory" size={scale(23)} color="#000000" />
       </Pressable>
       <Pressable onPress={onSelectVoice}>
         <VoiceMiniCard
@@ -70,20 +68,14 @@ const styles = StyleSheet.create({
     borderColor: "rgba(0,0,0,0.08)",
     overflow: "hidden",
   },
-  mainIcon: {
-    width: scale(62),
-    height: scale(62),
-  },
   historyButton: {
     width: scale(56),
     height: scale(56),
     borderRadius: moderateScale(28),
-    backgroundColor: "transparent",
+    backgroundColor: "#FFFBE8",
+    borderWidth: 1,
+    borderColor: "rgba(0,0,0,0.08)",
     alignItems: "center",
     justifyContent: "center",
-  },
-  historyIcon: {
-    width: scale(56),
-    height: scale(56),
   },
 });

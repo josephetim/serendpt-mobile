@@ -1,18 +1,19 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
+import { AppIcon, AppIconName } from "../ui/AppIcon";
 
 interface CategoryPillProps {
   label: string;
-  icon: React.ComponentProps<typeof Feather>["name"];
+  icon: AppIconName;
 }
 
 export const CategoryPill = ({ label, icon }: CategoryPillProps) => {
   return (
     <View style={styles.pill}>
-      <Feather name={icon} size={scale(15)} color="#70706F" />
+      <AppIcon name={icon} size={scale(15)} color="#70706F" />
       <Text style={styles.label}>{label}</Text>
     </View>
   );
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: "#70706F",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(14),
   },
 });

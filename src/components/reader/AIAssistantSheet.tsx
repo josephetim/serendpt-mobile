@@ -11,13 +11,14 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { getConversation, sendChatQuestion } from "../../api/chat";
 import { ConversationItem } from "../../types/api";
 import { normalizeError } from "../../utils/errors";
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
 import { AssistantState } from "./ListeningPill";
+import { Fonts } from "../../theme/fonts";
+import { AppIcon } from "../ui/AppIcon";
 
 type AssistantOpenReason = "assistant" | "history";
 
@@ -158,7 +159,7 @@ export const AIAssistantSheet = ({
               <Text style={styles.subtitle}>{subtitle}</Text>
             </View>
             <Pressable onPress={onClose}>
-              <Feather name="x" size={scale(18)} color="#000000" />
+              <AppIcon name="close" size={scale(19)} color="#000000" />
             </Pressable>
           </View>
 
@@ -210,7 +211,7 @@ export const AIAssistantSheet = ({
               {isSending ? (
                 <ActivityIndicator color="#000000" size="small" />
               ) : (
-                <Feather name="send" size={scale(16)} color="#000000" />
+                <AppIcon name="send" size={scale(16)} color="#000000" />
               )}
             </Pressable>
           </View>
@@ -246,12 +247,12 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(10),
   },
   title: {
-    fontFamily: "EBGaramond_500Medium",
+    fontFamily: Fonts.serifMedium,
     fontSize: moderateScale(28),
     color: "#000000",
   },
   subtitle: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(13),
     color: "#70706F",
     marginTop: verticalScale(2),
@@ -265,7 +266,7 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(10),
   },
   readButtonText: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     color: "#212121",
     fontSize: moderateScale(13),
   },
@@ -310,7 +311,7 @@ const styles = StyleSheet.create({
   bubbleText: {
     fontSize: moderateScale(14),
     lineHeight: moderateScale(20),
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
   },
   userBubbleText: {
     color: "#000000",
@@ -325,12 +326,12 @@ const styles = StyleSheet.create({
     gap: verticalScale(8),
   },
   helperText: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     color: "#70706F",
     fontSize: moderateScale(13),
   },
   emptyText: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     color: "#70706F",
     fontSize: moderateScale(13),
     textAlign: "center",
@@ -339,7 +340,7 @@ const styles = StyleSheet.create({
   errorText: {
     marginTop: verticalScale(8),
     color: "#FF3B30",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(12),
   },
   inputRow: {
@@ -357,7 +358,7 @@ const styles = StyleSheet.create({
     borderRadius: moderateScale(12),
     paddingHorizontal: scale(12),
     paddingVertical: verticalScale(10),
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     color: "#212121",
     fontSize: moderateScale(14),
     backgroundColor: "#FFFFFF",

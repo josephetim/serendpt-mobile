@@ -1,8 +1,9 @@
 import React from "react";
 import { Pressable, StyleSheet, Text } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
+import { AppIcon } from "../ui/AppIcon";
 
 interface PageSelectorPillProps {
   pageLabel: string;
@@ -13,7 +14,7 @@ export const PageSelectorPill = ({ pageLabel, onPress }: PageSelectorPillProps) 
   return (
     <Pressable style={styles.pill} onPress={onPress}>
       <Text style={styles.text}>{pageLabel}</Text>
-      <Feather name="chevron-down" size={scale(13)} color="#000000" />
+      <AppIcon name="chevronDown" size={scale(13)} color="#000000" />
     </Pressable>
   );
 };
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: scale(10),
   },
   text: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(12),
     lineHeight: moderateScale(18),
     color: "#000000",

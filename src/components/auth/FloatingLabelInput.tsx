@@ -7,9 +7,10 @@ import {
   TextInputProps,
   View,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
+import { AppIcon } from "../ui/AppIcon";
 
 interface FloatingLabelInputProps extends TextInputProps {
   label: string;
@@ -52,8 +53,8 @@ export const FloatingLabelInput = ({
         />
         {secureToggle ? (
           <Pressable onPress={() => setHidden((prev) => !prev)} style={styles.eye}>
-            <Feather
-              name={hidden ? "eye-off" : "eye"}
+            <AppIcon
+              name={hidden ? "eyeOff" : "eye"}
               size={scale(16)}
               color="#70706F"
             />
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: scale(16),
     top: verticalScale(17),
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(13),
     color: "#424242",
     backgroundColor: "#FAFAFA",
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(12),
   },
   input: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.inputRegular,
     fontSize: moderateScale(16),
     color: "#212121",
     paddingTop: verticalScale(16),
@@ -113,6 +114,6 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(5),
     color: "#FF3B30",
     fontSize: moderateScale(12),
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
   },
 });

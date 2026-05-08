@@ -1,9 +1,10 @@
 import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { DocumentSummary } from "../../types/api";
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
+import { AppIcon } from "../ui/AppIcon";
 
 interface DocumentProgressCardProps {
   document: DocumentSummary;
@@ -30,7 +31,7 @@ export const DocumentProgressCard = ({
         <View style={styles.progressTrack}>
           <View style={[styles.progressFill, { width: `${progressPercent}%` }]} />
         </View>
-        <Feather name="more-vertical" size={scale(14)} color="#000000" />
+        <AppIcon name="more" size={scale(16)} color="#000000" />
       </View>
     </Pressable>
   );
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(12),
   },
   title: {
-    fontFamily: "EBGaramond_500Medium",
+    fontFamily: Fonts.serifMedium,
     fontSize: moderateScale(22),
     lineHeight: moderateScale(30),
     color: "#000000",
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     maxWidth: "46%",
   },
   percent: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(16),
     color: "#000000",
     minWidth: scale(36),

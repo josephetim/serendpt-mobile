@@ -1,9 +1,9 @@
 import React from "react";
-import { ActivityIndicator, Image, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
-
-const microphoneIcon = require("../../../assets/icons/microphone-icon.png");
+import { Fonts } from "../../theme/fonts";
+import { AppIcon } from "../ui/AppIcon";
 
 export type AssistantState = "idle" | "listening" | "thinking" | "speaking" | "error";
 
@@ -36,7 +36,7 @@ export const ListeningPill = ({ assistantState }: ListeningPillProps) => {
         <ActivityIndicator size="small" color="#FF3B30" />
       ) : (
         <View style={styles.iconWrap}>
-          <Image source={microphoneIcon} style={styles.iconImage} resizeMode="contain" />
+          <AppIcon name="microphone" size={scale(15)} color="#000000" />
         </View>
       )}
       <Text style={styles.text}>{getStatusLabel(assistantState)}</Text>
@@ -67,12 +67,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  iconImage: {
-    width: "100%",
-    height: "100%",
-  },
   text: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(14),
     color: "#000000",
   },

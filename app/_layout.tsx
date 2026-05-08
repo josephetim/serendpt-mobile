@@ -5,8 +5,24 @@ import * as SplashScreen from "expo-splash-screen";
 import {
   EBGaramond_400Regular,
   EBGaramond_500Medium,
+  EBGaramond_600SemiBold,
 } from "@expo-google-fonts/eb-garamond";
+import {
+  Inter_300Light,
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_600SemiBold,
+  Inter_700Bold,
+} from "@expo-google-fonts/inter";
 import { ZenKakuGothicAntique_400Regular } from "@expo-google-fonts/zen-kaku-gothic-antique";
+import {
+  Entypo,
+  Feather,
+  FontAwesome5,
+  Ionicons,
+  MaterialCommunityIcons,
+  MaterialIcons,
+} from "@expo/vector-icons";
 
 import { useAuthStore } from "../src/store/authStore";
 
@@ -21,22 +37,38 @@ export default function RootLayout() {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
   const [fontsLoaded, fontsError] = useFonts({
+    ...Feather.font,
+    ...Ionicons.font,
+    ...MaterialIcons.font,
+    ...MaterialCommunityIcons.font,
+    ...FontAwesome5.font,
+    ...Entypo.font,
     EBGaramond_400Regular,
     EBGaramond_500Medium,
+    EBGaramond_600SemiBold,
+    Inter_300Light,
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_600SemiBold,
+    Inter_700Bold,
     ZenKakuGothicAntique_400Regular,
-    BrownStd: ZenKakuGothicAntique_400Regular,
-    Georgia: EBGaramond_400Regular,
   });
+
+  useEffect(() => {
+    if (fontsError) {
+      console.error("Font loading failed, continuing with available fonts.", fontsError);
+    }
+  }, [fontsError]);
 
   useEffect(() => {
     void hydrateAuth();
   }, [hydrateAuth]);
 
   useEffect(() => {
-    if ((fontsLoaded || fontsError) && isHydrated) {
+    if (fontsLoaded || fontsError) {
       void SplashScreen.hideAsync();
     }
-  }, [fontsLoaded, fontsError, isHydrated]);
+  }, [fontsLoaded, fontsError]);
 
   useEffect(() => {
     if (!isHydrated) {

@@ -4,6 +4,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import { Voice } from "../../types/api";
 import { moderateScale, scale } from "../../utils/responsive";
 import { VoiceVisualizer } from "./VoiceVisualizer";
+import { Fonts } from "../../theme/fonts";
 
 interface VoiceMiniCardProps {
   voice: Voice | null;
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#DADADA",
   },
   label: {
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     fontSize: moderateScale(12),
     color: "#424242",
   },

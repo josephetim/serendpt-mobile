@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 import { AppButton } from "../ui/AppButton";
 import { moderateScale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
 
 interface UploadDocumentButtonProps {
   onPress: () => void;
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
   helpText: {
     marginTop: verticalScale(16),
     textAlign: "center",
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
     color: "#000000",
     fontSize: moderateScale(14),
     lineHeight: moderateScale(21),

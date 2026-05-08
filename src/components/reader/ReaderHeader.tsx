@@ -1,10 +1,11 @@
 import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { truncateText } from "../../utils/format";
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
 import { AssistantState, ListeningPill } from "./ListeningPill";
+import { Fonts } from "../../theme/fonts";
+import { AppIcon } from "../ui/AppIcon";
 
 interface ReaderHeaderProps {
   title: string;
@@ -21,7 +22,7 @@ export const ReaderHeader = ({
     <View style={styles.wrap}>
       <View style={styles.leftRow}>
         <Pressable onPress={onBack} style={styles.backButton}>
-          <Feather name="chevron-left" size={scale(18)} color="#FFFFFF" />
+          <AppIcon name="back" size={scale(18)} color="#FFFFFF" />
         </Pressable>
         <Text style={styles.title}>{truncateText(title, 24)}</Text>
       </View>
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    fontFamily: "EBGaramond_500Medium",
+    fontFamily: Fonts.serifMedium,
     fontSize: moderateScale(18),
     lineHeight: moderateScale(27),
     color: "#000000",

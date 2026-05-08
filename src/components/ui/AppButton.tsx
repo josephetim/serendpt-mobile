@@ -9,6 +9,7 @@ import {
 } from "react-native";
 
 import { moderateScale, scale, verticalScale } from "../../utils/responsive";
+import { Fonts } from "../../theme/fonts";
 
 type ButtonVariant = "yellow" | "cream" | "black" | "outline";
 
@@ -75,6 +76,6 @@ const styles = StyleSheet.create({
   label: {
     fontSize: moderateScale(16),
     lineHeight: moderateScale(24),
-    fontFamily: "BrownStd",
+    fontFamily: Fonts.sansRegular,
   },
 });
